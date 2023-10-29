@@ -23,12 +23,12 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(){
-        return "frontoffice/auth/frmLogin";
+        return "auth/frmLogin";
     }
 
     @GetMapping("/registrar")
     public String registrar(){
-        return "frontoffice/auth/frmRegistroUsuario";
+        return "auth/frmRegistroUsuario";
     }
 
     @PostMapping("/login-success")
@@ -39,12 +39,12 @@ public class LoginController {
                 .getPrincipal();
         HttpSession session = request.getSession();
         session.setAttribute("usuario", usuario.getUsername());
-        return "frontoffice/auth/home";
+        return "auth/home";
     }
 
     @PostMapping("/guardarUsuario")
     public String guardarUsuario(@ModelAttribute Usuario usuario){
         usuarioService.saveUser(usuario);
-        return "frontoffice/auth/frmLogin";
+        return "auth/frmLogin";
     }
 }

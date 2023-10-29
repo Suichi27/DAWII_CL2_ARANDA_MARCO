@@ -39,7 +39,7 @@ public class LoginController {
                 .getPrincipal();
         HttpSession session = request.getSession();
         session.setAttribute("usuario", usuario.getUsername());
-        return "auth/home";
+        return "auth/UWU";
     }
 
     @PostMapping("/guardarUsuario")
